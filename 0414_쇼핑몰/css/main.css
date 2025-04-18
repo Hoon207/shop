@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+/* main.css */
+
+/* 1. 웹폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 2. 기본 스타일 변수선언 */
+:root{
+  --t_color:#333;
+  --m_color:#fe980f;
+  --g_color:#ccc;
+  --f_size_base:13px;
+}
+body{
+  font-family: "Noto Sans KR", sans-serif;
+  font-size:var(--f_size_base);
+  color:var(--t_color);
+}
+ul, ol, li{list-style:none;}
+a{
+  color:#333;
+  font-size:var(--f_size_base);
+}
+a:hover{
+  color:var(--m_color);
+  outline: none;
+  text-decoration: none;
+}
+a:focus{
+  outline: none;
+  outline-offset: 0;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+  background:none;
+}
+
+
+main{padding:15px 0px;}
+main section{
+  padding:10px 0px;
+}
+
+/* 메인 슬라이드 서식 */
+.slide img{width:100%;}
+.mainmenu .nav a{
+  font-size:16px;
+}
+
+.title{
+  color:var(--m_color);
+  font-family:"Noto Sans";
+  font-size:18px;  text-transform: uppercase;
+  text-align:center;  font-weight: 600;
+  position:relative;}
+
+.title:before{
+  content:"";  display:block;
+  height:1px;  width:100%;
+  background:var(--g_color);
+  position:absolute;  top:10px;left:0px;
+}
+.title > span{
+  background:#fff;
+  position:relative;
+  padding:0px 12px;
+}
+
+.category-products .panel{
+  border:none;
+  background:#ffffff;
+  box-shadow: none;
+}
+.category-products .panel-default .panel-heading {
+  background-color: #FFFFFF;
+  border: 0 none;
+  padding: 5px 20px;
+}
+.panel-group{
+  border:1px solid #ccc;
+  border-radius:4px;
+}
+.category-products .panel-default .panel-heading .panel-title a {
+  color: #696763;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.panel a:hover{color:var(--t_color);}
+
+/* +버튼 서식 */
+.category-products .badge {
+  background: none;
+  border-radius: 10px;
+  color: #696763;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 10px;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+/* product-overlay서식 */
+.product-image-wrapper {
+  border: 1px solid #F7F7F5;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.single-products {position: relative;}
+.new, .sale {position: absolute;top: 0;right: 0;}
+.productinfo h2 {
+  color: #FE980F; font-size: 24px;
+  font-weight: 700;
+}
+.product-overlay h2 {
+  color: #fff;  font-size: 24px;
+  font-weight: 700;
+}
+.productinfo p {
+  font-size: 14px;  font-weight: 400;
+  color: #696763;
+}
+.productinfo img {width: 100%;}
+.productinfo {position: relative;}
+.product-overlay {
+  background: rgba(254, 152, 15, .8);
+  top: 0;  display: none;  height: 0;
+  position: absolute;
+  -webkit-transition: height 500ms ease 0s;
+  transition: height 500ms ease 0s;
+  width: 100%;
+  display: block;
+}
+.single-products:hover .product-overlay {
+  display: block;height: 100%;
+}
+.product-overlay .overlay-content {
+  bottom: 0;  position: absolute;
+  text-align: center;  width: 100%;
+}
+/* 장바구니 서식 */
+.product-overlay .add-to-cart {
+  background: #fff;  border: 0 none;
+  border-radius: 0;  color: #FE980F;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.product-overlay .add-to-cart:hover {  background: #fff;  color: #FE980F;}
+.product-overlay p{font-size:14px;font-weight:400;color:#fff;}
+.add-to-cart{
+  background: #F5F5ED;border:none;border-radius:0px;color:#696763;
+  font-size:15px;margin-bottom: 25px;
+}
+
+/*상품상세페이지 서식*/
+
+.view-product{position:relative;}
+.view-product img{width: 100%; height: 380px; border:1px solid #f7f7f0;}
+#similar-product .carousel-inner .item img{display: inline-block; margin-left: 15px;}
+.item-control{position: absolute; top:35%;}
+.item-control i{
+  background-color: #FE980F;
+  color:#FFFFFF;
+  font-size: 20px;
+  padding:5px 10px;
+}
+.item-control i:hover{background-color: #ccccc6;}
+.product-information{
+  border:1px solid #f7f7f0;
+  overflow: hidden;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  padding-top: 60px;
+  position: relative;
+
+}
+
+.newarrival{position:absolute; top:0; left:0;}
+.product-information h2{color:#363432; font-family: 'roboto', sans-serif;
+font-size: 20px; margin-top: 0;}
+  
+.product-information p{color:#696763; font-family: 'roboto', sans-serif; margin-bottom: 5px;}
+.product-information span{display: inline-block; margin-bottom:8px; margin-top:18px;}
+.product-information span input{border:1px solid #dededc; color: #696763; font-family: 'roboto', sans-serif; font-size: 20px; font-weight: 700; height: 33px; outline: medium none; text-align: center; width:50px;}
+.product-information span label{color:#696763; font-family: 'roboto', sans-serif; font-weight: 700; margin-right: 5px;}
+.cart{background-color: #FE980F; border:0 none; border-radius: 0; color:#ffffff; font-family: 'roboto',sans-serif; font-size: 15px; margin-bottom: 10px; margin-left: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer address{
+  line-height:60px !important;
+  background:#333;
+  color:#fff;
+  text-align:center;
+}
